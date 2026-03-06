@@ -11,11 +11,11 @@ if (!hasSiteUrl && process.env.NODE_ENV === 'production') {
 
 export const site = {
   url: hasSiteUrl ? siteUrl : fallbackSiteUrl,
-  title: 'Astro Themes by Whono',
-  brandTitle: 'Whono',
-  author: 'Whono',
+  title: "WZVico's Blog",
+  brandTitle: 'WZVico',
+  author: 'WZVico',
   authorAvatar: 'author/avatar.webp',
-  description: '一个 Astro 主题的展示站：轻量、可维护、可复用。'
+  description: '记我所思，作我所想。'
 };
 
 export const PAGE_SIZE_ARCHIVE = 12;

@@ -31,9 +31,9 @@
     "new:bit": "node ./scripts/new-bit.mjs"
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.12",
+    "@astrojs/rss": "^4.0.15",
     "@astrojs/sitemap": "^3.7.0",
-    "astro": "^5.16.9"
+    "astro": "^5.18.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.6",

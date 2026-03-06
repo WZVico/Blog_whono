@@ -102,6 +102,9 @@ const sanitizeSchema = {
 export default defineConfig({
   // Required for RSS generation. Prefer SITE_URL; fallback keeps build passing.
   site: site.url,
+  image: {
+    domains: ['imgbed.wzvico.com']
+  },
   integrations: hasSiteUrl ? [sitemap()] : [],
   trailingSlash: 'always',
   build: {

@@ -2,7 +2,7 @@
 import Icon from './Icon.astro';
 import { createWithBase } from '../utils/format';
 
-const { siteTitle = 'Whono' } = Astro.props;
+const { siteTitle = 'WZVico' } = Astro.props;
 
 const pathname = Astro.url.pathname;
 const base = import.meta.env.BASE_URL ?? '/';
@@ -17,7 +17,7 @@ const nav = [
   { label: '关于', href: withBase('/about/') }
 ];
 
-const quote = 'A minimal Astro theme\nfor essays, notes, and docs.\nDesigned for reading,\nopen-source.';
+const quote = '向前未止\nEver Forward';
 ---
 
 <aside class="sidebar">
