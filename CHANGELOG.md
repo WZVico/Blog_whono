@@ -14,7 +14,7 @@ The format is based on Keep a Changelog, and this project aims to follow Semanti
 - 新增 sitemap 与构建期 `robots.txt`（仅在设置 `SITE_URL` 时启用）
 - 新增 `tools/charset-base.txt`（3500 常用字基础表）
 - 新增通用 Lightbox 组件/脚本/样式（正文页与 bits 复用）
-- 正文页（随笔/归档/小记）图片支持轻灯箱（禁用缩放/拖拽/下滑关闭）
+- 正文页（随笔/归档/书单）图片支持轻灯箱（禁用缩放/拖拽/下滑关闭）
 - bits 新增轻量图片预览 dialog 与 Markdown 语法演示
 - bits 支持作者覆盖（`author.name`/`author.avatar`）与草稿生成器作者输入
 - 新增 `/archive/index.json` 与 `/essay/index.json` 静态搜索索引端点（构建期生成，可缓存）
@@ -38,7 +38,7 @@ The format is based on Keep a Changelog, and this project aims to follow Semanti
 - bits 作者与头像策略细化（默认入口、兜底、尺寸）
 - 首页 Hero 图片改用 `astro:assets`（AVIF/WebP）与 LCP 控制
 - 字体子集化与自托管（LXGW WenKai Lite / Noto Serif SC），移除大字体 preload
-- 路由/集合调整：归档入口统一 `/archive/`，/essay 仅重定向，/memo 替代 /kids
+- 路由/集合调整：归档入口统一 `/archive/`，/essay 仅重定向，/booklist 替代 /kids
 ### Fixed
 - 修复 `src/scripts/lightbox.ts` 在 `exactOptionalPropertyTypes` 下的类型错误（避免 `npm run check` 失败）
 - `robots.txt` 移除误导性的 sitemap 注释
@@ -91,11 +91,11 @@ The format is based on Keep a Changelog, and this project aims to follow Semanti
   - 自动跟随系统偏好，支持手动切换
   - 切换按钮位于侧栏底部，带无障碍支持（`aria-pressed`、`aria-label`）
   - Shiki 代码高亮双主题（`github-light` / `github-dark`）
-- 侧栏底部新增阅读模式与 RSS 按钮（黑白图标、悬停提示），阅读模式全站入口，文章/小记页支持沉浸阅读与退出按钮
-- 小记页面 TOC 区域折叠指示器（三角形图标，展开/折叠时旋转）
+- 侧栏底部新增阅读模式与 RSS 按钮（黑白图标、悬停提示），阅读模式全站入口，文章/书单页支持沉浸阅读与退出按钮
+- 书单页面 TOC 区域折叠指示器（三角形图标，展开/折叠时旋转）
 - Initial Astro theme scaffold with fixed sidebar + content layout.
-- Routes: `/`, `/archive/`, `/essay/`, `/bits/`, `/memo/`, `/about/`.
-- Content Collections: `essay`, `bits`, `memo`.
+- Routes: `/`, `/archive/`, `/essay/`, `/bits/`, `/booklist/`, `/about/`.
+- Content Collections: `essay`, `bits`, `booklist`.
 - Bits draft generator: `npm run new:bit`.
 - RSS endpoints: `/rss.xml`, `/archive/rss.xml`, `/essay/rss.xml`.
 
@@ -104,7 +104,7 @@ The format is based on Keep a Changelog, and this project aims to follow Semanti
 - callout 图标改为 `.callout-icon` 钩子，CSS mask 提供 SVG；tip 使用 Lucide sparkles 并设为低饱和绿
 - 更新 Markdown 指南中的 callout 示例结构
 - 正文图片统一最大宽度为 75% 并居中显示（`.prose img`）
-- 小记示例内容替换为可开源保留的原创示例
+- 书单示例内容替换为可开源保留的原创示例
 - 配色调整为暖色调（Stone 色系）
 - TOC 区域行间距增加（`gap: 14px`，一级标题间距 `20px`）
 - 引用和代码块背景色改用 CSS 变量，适配夜间模式
@@ -116,10 +116,10 @@ The format is based on Keep a Changelog, and this project aims to follow Semanti
 - 导航链接 hover 效果改为向左平移
 
 ### Fixed
-- 修复 `astro check` 类型检查错误（隐式 `any`、DOM 类型收窄、小记 TOC 类型推断）
+- 修复 `astro check` 类型检查错误（隐式 `any`、DOM 类型收窄、书单 TOC 类型推断）
 - 修正文档指引路径（AI-GUIDE 指向 docs）
 - 修复引用内 `<p>` 标签默认 margin 导致的高度问题
 - 修复深色模式代码块背景未切换、日间高亮被覆盖的问题
 
 ### Removed
-- 清理未使用的 CSS 样式（`.bits-hero`、`.memo-subtitle`）
+- 清理未使用的 CSS 样式（`.bits-hero`、`.booklist-subtitle`）

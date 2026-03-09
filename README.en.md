@@ -24,7 +24,7 @@ A minimal two-column Astro theme for personal writing and lightweight publishing
 
 - Two-column layout (sidebar navigation + content area)
 - Responsive design for mobile devices
-- Content collections: essay / bits / memo (archive is generated from essay)
+- Content collections: essay / bits / booklist (archive is generated from essay)
 - Bits draft generator on `/bits/`: one-click Markdown output (copy/download), with multi-image support and automatic image dimension detection
 - RSS: aggregated feed + section feeds
 - Light / dark theme + reading mode
@@ -125,11 +125,11 @@ If execution policy blocks `npm.ps1`, use one of the following:
 Content Collections:
 - Essay: `src/content/essay`
 - Bits: `src/content/bits`
-- Memo: `src/content/memo/index.md`
+- Booklist: `src/content/booklist/index.md`
 - Archive: generated from essay entries via the `archive` field
 
 Main routes:
-- List pages: `/archive/`, `/essay/`, `/bits/`, `/memo/`, `/about/`
+- List pages: `/archive/`, `/essay/`, `/bits/`, `/booklist/`, `/about/`
 - Detail page: `/archive/[...slug]` (single canonical entry point)
 
 

@@ -6,12 +6,12 @@ import { getEntry, render } from 'astro:content';
 
 const prod = import.meta.env.PROD;
 
-const entry = await getEntry('memo', 'index');
+const entry = await getEntry('booklist', 'index');
 if (!entry) {
-  throw new Error('Missing memo page entry: src/content/memo/index.md');
+  throw new Error('Missing booklist page entry: src/content/booklist/index.md');
 }
 if (prod && entry.data.draft) {
-  throw new Error('Memo entry is marked draft...');
+  throw new Error('Booklist entry is marked draft...');
 }
 
 const { Content, headings } = await render(entry);
@@ -37,9 +37,9 @@ for (const h of headings) {
 ---
 
 <BaseLayout
-  title="生活小记"
-  description="整理一些值得留存的片刻与回忆。"
-  bodyClass="memo-page immersive-page"
+  title="那些阅读"
+  description="尝试拯救日渐稀薄的注意力"
+  bodyClass="booklist-page immersive-page"
 >
   <div class="page-header reader-exit-anchor">
     <h1 class="page-title">{entry.data.title}</h1>
@@ -58,13 +58,13 @@ for (const h of headings) {
   </div>
 
   <div class="intro">
-    时间流经我们，如同风穿过回廊。
-    <br />总有一些瞬间，携带着特别的气息或光亮，短暂停留后便消散。
-    <br />有些感受，无法被镜头承载，有些记忆难以被影像收藏。
-    <br />也许，为瞬间的感受留下一份文字备份，正是抵抗遗忘最温柔却最有效的方式。
+    阅读的价值转向了另一件更困难的事：
+    <br />什么值得相信，什么可以怀疑，什么需要时间去理解。
+    <br />书籍提供的是尺度，不是答案。
+    <br />—— <a href="https://weibo.com/u/7330582659">JetlagBooks</a>
   </div>
 
-  <nav class="memo-toc" aria-label="目录">
+  <nav class="booklist-toc" aria-label="目录">
     {groups.map((g) => (
       <details open>
         <summary>{g.title}</summary>
@@ -82,7 +82,7 @@ for (const h of headings) {
     ))}
   </nav>
 
-  <div class="memo-content prose">
+  <div class="booklist-content prose">
     <Content />
   </div>
 
@@ -91,11 +91,11 @@ for (const h of headings) {
       const mq = window.matchMedia('(max-width: 640px)');
       const sync = () => {
         if (mq.matches) {
-          document.querySelectorAll('.memo-toc details[open]').forEach((el) => {
+          document.querySelectorAll('.booklist-toc details[open]').forEach((el) => {
             el.removeAttribute('open');
           });
         } else {
-          document.querySelectorAll('.memo-toc details:not([open])').forEach((el) => {
+          document.querySelectorAll('.booklist-toc details:not([open])').forEach((el) => {
             el.setAttribute('open', '');
           });
         }
@@ -103,7 +103,7 @@ for (const h of headings) {
       sync();
       mq.addEventListener('change', sync);
 
-      const content = document.querySelector('.memo-content');
+      const content = document.querySelector('.booklist-content');
       if (content) {
         const nodes = content.querySelectorAll('h2, h3');
         let count = 0;
@@ -134,7 +134,7 @@ for (const h of headings) {
 
     initArticleLightbox({
       dialogId: 'lightbox',
-      containerSelector: '.memo-content.prose',
+      containerSelector: '.booklist-content.prose',
       enableZoom: false,
       enablePan: false,
       enableSwipeDownClose: false

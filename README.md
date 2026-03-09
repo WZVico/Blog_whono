@@ -24,7 +24,7 @@
 
 - 双栏布局（侧栏导航 + 内容区）
 - 移动端适配
-- 内容集合：随笔 / 絮语 / 小记（归档为目录视图）
+- 内容集合：随笔 / 絮语 / 书单（归档为目录视图）
 - 絮语草稿生成器：/bits 页面一键生成 Markdown（复制/下载），支持多图与自动读取尺寸
 - RSS：聚合 + 分栏订阅
 - 浅色 / 深色模式 + 阅读模式
@@ -125,11 +125,11 @@ npm run build && npm run preview
 内容集合（Content Collections）：
 - 随笔：位于 `src/content/essay` 目录
 - 絮语：位于 `src/content/bits` 目录
-- 小记：位于 `src/content/memo/index.md`
+- 书单：位于 `src/content/booklist/index.md`
 - 归档：由随笔集合按 `archive` 字段生成目录视图
 
 主要路由：
-- 列表页：`/archive/`、`/essay/`、`/bits/`、`/memo/`、`/about/`
+- 列表页：`/archive/`、`/essay/`、`/bits/`、`/booklist/`、`/about/`
 - 详情页：`/archive/[...slug]`（唯一入口）
 
 

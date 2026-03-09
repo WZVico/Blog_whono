@@ -55,8 +55,8 @@ const bits = defineCollection({
   })
 });
 
-const memo = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/memo' }),
+const booklist = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/booklist' }),
   schema: z.object({
     title: z.string(),
     subtitle: z.string().optional(),
@@ -66,4 +66,4 @@ const memo = defineCollection({
   })
 });
 
-export const collections = { essay, bits, memo };
+export const collections = { essay, bits, booklist };

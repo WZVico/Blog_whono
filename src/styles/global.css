@@ -552,31 +552,31 @@ hr {
   color: var(--muted);
 }
 
-/* Memo（小记） */
+/* Booklist（书单） */
 
-.memo-page {
-  --memo-intro-mb: 32px;
-  --memo-toc-mt: 18px;
-  --memo-toc-mb: 46px;
+.booklist-page {
+  --booklist-intro-mb: 32px;
+  --booklist-toc-mt: 18px;
+  --booklist-toc-mb: 46px;
 }
 
-.memo-page .intro {
-  margin-bottom: var(--memo-intro-mb);
+.booklist-page .intro {
+  margin-bottom: var(--booklist-intro-mb);
 }
 
-.memo-toc {
+.booklist-toc {
   margin: 18px 0 46px;
 }
 
-.memo-page .memo-toc {
-  margin: var(--memo-toc-mt) 0 var(--memo-toc-mb);
+.booklist-page .booklist-toc {
+  margin: var(--booklist-toc-mt) 0 var(--booklist-toc-mb);
 }
 
-.memo-toc details {
+.booklist-toc details {
   margin: 20px 0;
 }
 
-.memo-toc summary {
+.booklist-toc summary {
   cursor: pointer;
   list-style: none;
   display: flex;
@@ -586,12 +586,12 @@ hr {
   font-size: 15px;
 }
 
-.memo-toc summary::-webkit-details-marker {
+.booklist-toc summary::-webkit-details-marker {
   display: none;
 }
 
 
-.memo-toc summary::after {
+.booklist-toc summary::after {
   content: "▶";
   font-size: 10px;
   color: var(--muted);
@@ -599,11 +599,11 @@ hr {
   margin-left: 4px;
 }
 
-.memo-toc details[open] summary::after {
+.booklist-toc details[open] summary::after {
   transform: rotate(90deg);
 }
 
-.memo-toc summary::before {
+.booklist-toc summary::before {
   content: "";
   width: 4px;
   height: 4px;
@@ -612,7 +612,7 @@ hr {
   opacity: 0.55;
 }
 
-.memo-toc .toc-items {
+.booklist-toc .toc-items {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 14px;
@@ -621,7 +621,7 @@ hr {
   list-style: none;
 }
 
-.memo-toc .toc-items a {
+.booklist-toc .toc-items a {
   display: inline-flex;
   gap: 8px;
   align-items: center;
@@ -648,7 +648,7 @@ hr {
   color: var(--muted);
 }
 
-.memo-content h2 {
+.booklist-content h2 {
   text-align: center;
   font-size: 16px;
   font-weight: 600;
@@ -656,21 +656,21 @@ hr {
   color: var(--muted);
 }
 
-.memo-content h2::before,
-.memo-content h2::after {
+.booklist-content h2::before,
+.booklist-content h2::after {
   content: "-";
   margin: 0 10px;
   color: var(--border);
 }
 
-.memo-content h3 {
+.booklist-content h3 {
   margin: 28px 0 10px;
   font-size: 16px;
   position: relative;
   padding-left: 34px;
 }
 
-.memo-content h3::before {
+.booklist-content h3::before {
   content: attr(data-num);
   position: absolute;
   left: 0;
@@ -690,17 +690,17 @@ hr {
   font-variant-numeric: tabular-nums;
 }
 
-:root[data-theme="dark"] .memo-content h3::before {
+:root[data-theme="dark"] .booklist-content h3::before {
   background: #242424;
   border-color: #3a3a3a;
   color: var(--muted);
 }
 
 @media (min-width: 901px) {
-  .memo-page {
-    --memo-intro-mb: 10px;
-    --memo-toc-mt: 8px;
-    --memo-toc-mb: 23px;
+  .booklist-page {
+    --booklist-intro-mb: 10px;
+    --booklist-toc-mt: 8px;
+    --booklist-toc-mb: 23px;
   }
 }
 
@@ -742,13 +742,13 @@ hr {
     grid-template-columns: 1fr;
   }
 
-  .memo-page {
-    --memo-intro-mb: 12px;
-    --memo-toc-mt: 8px;
-    --memo-toc-mb: 24px;
+  .booklist-page {
+    --booklist-intro-mb: 12px;
+    --booklist-toc-mt: 8px;
+    --booklist-toc-mb: 24px;
   }
 
-  .memo-page .memo-content > h2:first-child {
+  .booklist-page .booklist-content > h2:first-child {
     margin-top: 12px;
   }
 
@@ -770,7 +770,7 @@ hr {
     height: 150px;
   }
 
-  .memo-toc .toc-items {
+  .booklist-toc .toc-items {
     grid-template-columns: repeat(3, 1fr);
   }
 

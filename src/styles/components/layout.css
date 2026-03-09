@@ -761,12 +761,12 @@ body.immersive-page[data-reading="immersive"] .prose p {
   margin: 16px 0;
 }
 
-/* Memo 页面阅读增强：字号增幅更小 */
-body.memo-page[data-reading="immersive"] .prose {
+/* Booklist 页面阅读增强：字号增幅更小 */
+body.booklist-page[data-reading="immersive"] .prose {
   font-size: 16px;
   line-height: 1.85;
 }
 
-body.memo-page[data-reading="immersive"] .prose p {
+body.booklist-page[data-reading="immersive"] .prose p {
   margin: 14px 0;
 }
